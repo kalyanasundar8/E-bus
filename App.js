@@ -1,49 +1,33 @@
-import React, {useState}from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
-import Signin from '../E-bus/components/signin';
-import Button from '../E-bus/components/button';
-
+import Navigation from '../E-bus/navigation/navigation';
 
 export default function App() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
   return (
     <View style={styles.container}>
-        <Text style={styles.titlelogo}>E-BUS</Text>
-        <Image source={require('../E-bus/assets/logo.png')} style={styles.logo}></Image>
-        <Signin 
-        placeholder="Username" 
-        value={username} 
-        setValue={setUsername}
-        />
-        <Signin 
-        placeholder="Password" 
-        value={password} 
-        setValue={setPassword}
-        secureTextEntry
-        />
-        <Button />
+        <Text style={styles.title}>E-Bus</Text>
+      <Image source = {require('./assets/logo.png')} style={styles.logo}/>
+      <Navigation />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
-    height: 850,
-    backgroundColor: '#F9FBFC',
+    backgroundColor: "#f9fbfc",
+    height: '100%',
   },
-  titlelogo: {
-    marginTop: 130,
-    marginLeft: 150,
-    fontSize: 30,
+  title: {
     fontWeight: 'bold',
+    fontSize: 40,
+    marginTop: 100,
+    marginLeft: 140,
   },
+
   logo: {
-    width: 140,
-    height: 140,
     marginTop: 20,
-    marginLeft: 120,
-  }
+    marginLeft: 130,
+    width: 130,
+    height: 130,
+  },
 });

@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet } from 'react-native';
+import {StyleSheet, View, Text, Pressable } from 'react-native';
 import React from 'react';
 
-const button = () => {
+const button = ({text}) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Signin</Text>
-    </View>
+    <Pressable style={styles.container}>
+      <Text style={styles.btn} style={styles.text}>{text}</Text>
+    </Pressable>
   );
 };
 
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         padding: 5,  
         borderRadius: 15,
     },
+    
     text: {
         color: 'white',
         marginTop: 5,
